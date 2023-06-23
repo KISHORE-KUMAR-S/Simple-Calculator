@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+    </head>
+    <style>
+        *{
+            background-color: black;
+            color: white;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        h1{
+            margin: 0;
+            text-align: center;
+        }
+        #input{
+            width: 460px;
+            height: 50px;
+            border-radius: 10px;
+            border: none;
+            font-size: xx-large;
+            text-align: right;
+        }
+        button{
+            height: 50px;
+            width: 100px;
+            justify-content: center;
+            border-radius: 50px;
+            background-color: rgb(43, 43, 43);
+            color: white;
+        }
+        table{
+            border-collapse: collapse;
+            text-align: center;
+            border: none;
+        }
+        td, tr{
+            padding: 10px;
+        }
+    </style>
+    <body>
+        <h1>Calculator</h1>
+        <br><br>
+        <center><input type="text" name id="input" placeholder="0"></center><br><br>
+        <center>
+            <table>
+                <tr>
+                    <td><button id="btn-ac" onclick="ac()">AC</button></td>
+                    <td><button id="btn-clr" onclick="clr()">CLR</button></td>
+                    <td><button id="btn-mod" onclick="bopen()">(</button></td>
+                    <td><button id="btn-div" onclick="bclose()">)</button></td>
+                </tr>
+                <tr>
+                    <td><button id="btn-ac" onclick="pi()">π</button></td>
+                    <td><button id="btn-clr" onclick="minus()" ondblclick="plus()">+/-</button></td>
+                    <td><button id="btn-mod" onclick="mod()">%</button></td>
+                    <td><button id="btn-div" onclick="div()" style="background-color:darkorange;">/</button></td>
+                </tr>
+                <tr>
+                    <td><button id="btn-7" onclick="seven()">7</button></td>
+                    <td><button id="btn-8" onclick="eight()">8</button></td>
+                    <td><button id="btn-9" onclick="nine()">9</button></td>
+                    <td><button id="btn-mul" onclick="mul()" style="background-color:darkorange;">*</button></td>
+                </tr>
+                <tr>
+                    <td><button id="btn-4" onclick="four()">4</button></td>
+                    <td><button id="btn-5" onclick="five()">5</button></td>
+                    <td><button id="btn-6" onclick="six()">6</button></td>
+                    <td><button id="btn-sub" onclick="sub()" style="background-color:darkorange;">-</button></td>
+                </tr>
+                <tr>
+                    <td><button id="btn-1" onclick="one()">1</button></td>
+                    <td><button id="btn-2" onclick="two()">2</button></td>
+                    <td><button id="btn-3" onclick="three()">3</button></td>
+                    <td><button id="btn-add" onclick="add()" style="background-color:darkorange;">+</button></td>
+                </tr>
+                <tr>
+                    <td><button id="btn-00" onclick="doublezero()">00</button></td>
+                    <td><button id="btn-0" onclick="zero()">0</button></td>
+                    <td><button id="btn-dot" onclick="dot()">.</button></td>
+                    <td><button id="btn-eq" onclick="eq()" style="background-color:darkorange;">=</button></td>
+                </tr>
+            </table>
+        </center>
+    </body>
+    <script>
+        var input = document.getElementById("input");
+        var operator = document.getElementById("input");
+        function one(){
+            input.value += 1
+        }
+        function two(){
+            input.value += 2
+        }
+        function three(){
+            input.value += 3
+        }
+        function four(){
+            input.value += 4
+        }
+        function five(){
+            input.value += 5
+        }
+        function six(){
+            input.value += 6
+        }
+        function seven(){
+            input.value += 7
+        }
+        function eight(){
+            input.value += 8
+        }
+        function nine(){
+            input.value += 9
+        }
+        function zero(){
+            input.value += 0
+        }
+        function doublezero(){
+            input.value += "00"
+        }
+        function clr(){
+            input.value = input.value.slice(0, -1)
+        }
+        function ac(){
+            input.value = ""
+        }
+        function add(){
+            input.value += "+"
+        }
+        function sub(){
+            input.value += "-"
+        }
+        function mul(){
+            input.value += "*"
+        }
+        function div(){
+            input.value += "/"
+        }
+        function eq(){
+            input.value = eval(input.value)
+        }
+        function mod(){
+            input.value /= 100
+        }
+        function dot(){
+            input.value += "."
+        }
+        function pi(){
+            input.value += Math.PI
+        }
+        function bopen(){
+            input.value += "("
+        }
+        function bclose(){
+            input.value += ")"
+        }
+        function minus(){
+            operator.value = "-"
+        }
+        function plus(){
+            operator.value = "+"
+        }
+    </script>
+</html>
